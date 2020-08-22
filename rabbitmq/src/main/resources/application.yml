@@ -1,0 +1,28 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: config-center
+  cloud:
+    config:
+      server:
+        git:
+          uri:  https://github.com/lvym-web/springcloud-config.git
+          search-paths:
+            - springcloud-config
+      label: master
+rabbitmq:
+  host: 192.168.146.110
+  port: 5672
+  username: guest
+  password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone:  http://eureka-server01:7001/eureka
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'bus-refresh'
+

@@ -1,0 +1,20 @@
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false # false 也可以取值
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-server01:7001/eureka,http://eureka-server02:7002/eureka,http://eureka-server03:7003/eureka
+spring:
+  application:
+    name: lvym-consumer-order
+#默认一秒
+ribbon:
+  ReadTimeout:  5000
+  ConnectTimeout: 5000
+#Feign日志
+logging:
+  level:
+    com.lvym.springcloud.feign.OrderToPayment: debug

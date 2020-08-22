@@ -1,0 +1,13 @@
+server:
+  port: 7003
+spring:
+  application:
+    name: lvym-eureka-server03
+eureka:
+  instance:
+    hostname: eureka-server03
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka-server01:7001/eureka/,http://eureka-server02:7002/eureka/
